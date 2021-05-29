@@ -29,8 +29,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Features\ClientChat.feature.cs">
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <SpecFlowFeatureFiles Update="Features\ClientChat.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ClientChat.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
   </ItemGroup>
 
