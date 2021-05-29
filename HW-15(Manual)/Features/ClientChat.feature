@@ -10,7 +10,7 @@ Scenario Is is possible open chat with manager for client
 	And Client is created
 	And Client is logged
 	When Client open chat with manager
-Than Chat is opened
+	Then Chat is opened
 
 @p1
 Scenario:  Display notification about sms
@@ -65,3 +65,21 @@ Scenario: Client have status offline if he log out
 	And Client is logged
 	When Client log out
 	Then  Client has status offline
+
+@smoke
+Scenario: Smoke
+	Given Manager is created
+	And Manager is logged
+	And Client is created
+	And Client is logged
+	When Client open chat with manager
+	And Client unique send sms for manager
+	And Manager click on number which contains in pop-up notification
+	And Manager send unique sms for manager
+	And Client is log out
+	And Client is sign in
+	Then Chat with manager is opened
+	And Sms for manager is sended
+	And Menager is redirected on page with client chat
+	And Displayed notification about sms for client
+	And Chat history is saved
